@@ -17,12 +17,18 @@ requirements:
   host:
     - python
     - setuptools
+    - pip
+    - wheel
   run:
     - python
 
 test:
   imports:
     - constantly
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/twisted/constantly
