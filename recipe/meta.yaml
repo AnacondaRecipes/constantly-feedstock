@@ -40,7 +40,7 @@ about:
     A library that provides symbolic constant support.
     It includes collections and constants with text, numeric, and bit flag values.
     Originally twisted.python.constants from the Twisted project.
-  doc_url: http://constantly.readthedocs.io/en/latest
+  doc_url: https://constantly.readthedocs.io/
   dev_url: https://github.com/twisted/constantly
 
 extra:
