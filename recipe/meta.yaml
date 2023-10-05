@@ -10,19 +10,25 @@ source:
   sha256: 586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1
+  script: pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
     - python
     - setuptools
+    - pip
+    - wheel
   run:
     - python
 
 test:
   imports:
     - constantly
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/twisted/constantly
@@ -34,7 +40,7 @@ about:
     A library that provides symbolic constant support.
     It includes collections and constants with text, numeric, and bit flag values.
     Originally twisted.python.constants from the Twisted project.
-  doc_url: http://constantly.readthedocs.io/en/latest
+  doc_url: https://constantly.readthedocs.io/
   dev_url: https://github.com/twisted/constantly
 
 extra:
