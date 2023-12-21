@@ -1,5 +1,5 @@
 {% set name = "constantly" %}
-{% set version = "15.1.0" %}
+{% set version = "23.10.4" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35
+  sha256: aa92b70a33e2ac0bb33cd745eb61776594dc48764b06c35e0efd050b7f1c7cbd
 
 build:
-  number: 1
-  script: pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
@@ -19,6 +19,8 @@ requirements:
     - setuptools
     - pip
     - wheel
+    - versioneer 0.29
+    - tomli 2.0.1  # [py<311]
   run:
     - python
 
